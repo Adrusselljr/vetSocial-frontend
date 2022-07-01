@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux';
 import { selectUser } from '../redux/userSlice';
 import CreateComment from './CreateComment';
@@ -7,11 +7,6 @@ import { Box } from '@mui/material';
 
 function DisplayPosts() {
     const user = useSelector(selectUser)
-    const [clicked, setClicked] = useState(false)
-
-    const handleClicked = () => {
-        setClicked(prevState => !prevState)
-    }
 
     return (
         <Box width={ 1 } display="flex" flexDirection="column" alignItems="center">
@@ -24,12 +19,8 @@ function DisplayPosts() {
                             <h6 style={{ width: "125px" }}>{ post.postOwner.username } : </h6>
                             <p style={{ width: "70%", marginRight: "25px", marginTop: "5px" }}>{ post.post }</p>
                         </div> 
-                        {
-                            post.commentHistory.length > 0
-                            ? <DisplayComments comments={ comments } />
-                            : ""
-                        }
-                        <CreateComment postId={ post._id } />
+                        <DisplayComments comments={ comments } />
+                        <CreateComment comments={ comments } postId={ post._id } />
                     </div>
                 )
             })}

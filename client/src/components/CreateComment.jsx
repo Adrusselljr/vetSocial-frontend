@@ -10,11 +10,18 @@ import CommentIcon from '@mui/icons-material/Comment';
 const URL = 'http://localhost:3001'
 
 function CreateComment(props) {
-    const { postId } = props
+    const { postId, comments } = props
     const [comment, setComment] = useState("")
+    const [clicked, setClicked] = useState(false)
     const user = useSelector(selectUser)
     const token = useSelector(selectToken)
     const dispatch = useDispatch()
+
+    const handleClicked = postId => {
+        if(comments.post === postId) {
+            setClicked(prevState => !prevState)
+        }
+    }
 
     const handleCreateComment = async postId => {
         const newBody = {
@@ -43,7 +50,11 @@ function CreateComment(props) {
                     <img style={{ width: "50px", height: "50px", marginRight: "25px" }} src={ user.profilePicture } alt="profilePicture" />
                     <input value={ comment } onChange={ e => setComment(e.target.value) } style={{ width: "76%", marginRight: "25px" }} placeholder={" Write a comment..."} type="text" />
                     <Button onClick={() => handleCreateComment(postId) } sx={{ marginRight: '10px' }} variant="contained"><AddCommentIcon sx={{ fontSize: 'medium' }} /></Button>
-                    <Button onClick={() => handleCreateComment(postId) } variant="contained"><CommentIcon sx={{ fontSize: 'medium' }} /></Button>
+                    {
+                        comments.length > 0
+                        ? <Button onClick={() => handleClicked(postId) } variant="contained"><CommentIcon sx={{ fontSize: 'medium' }} /></Button>
+                        : ""
+                    }
                 </div>
             </div>
         </Box>
