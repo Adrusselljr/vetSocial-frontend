@@ -38,14 +38,15 @@ function CreatePost() {
 
     return (
         <Box width={ 1 } display="flex" flexDirection="column" alignItems="center" sx={{ marginBottom: '25px' }}>
-            <div style={{ width: "50%" }} className='card'>
+            <div style={{ width: "50%", backgroundColor: '#242526' }} className='card'>
                 <div className="card-body">
-                    <img style={{ width: "50px", height: "50px", marginRight: "25px" }} src={ user.profilePicture } alt="profilePicture" />
-                    <input value={ post } onChange={ e => setPost(e.target.value) } style={{ width: "80%", marginRight: "25px" }} placeholder={` What's on your mind, ${ user.firstName }?`} type="text" />
-                    <Button onClick={ handleCreatePost } variant="contained"><PostAddIcon sx={{ fontSize: 'medium' }} /></Button>
+                    <img style={{ width: "50px", height: "50px", marginRight: "25px", borderRadius: '25px' }} src={ user.profilePicture } alt="profilePicture" />
+                    <input value={ post } onChange={ e => setPost(e.target.value) } style={{ width: "80%", marginRight: "25px", borderRadius: '10px', backgroundColor: '#e4e6eb' }} placeholder={` What's on your mind, ${ user.firstName }?`} type="text" />
+                    <Button sx={{ backgroundColor: 'black' }} onClick={ handleCreatePost } variant="contained"><PostAddIcon sx={{ fontSize: 'medium' }} /></Button>
                 </div>
             </div>
         </Box>
+
     )
 }
 

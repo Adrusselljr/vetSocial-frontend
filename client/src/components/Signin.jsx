@@ -35,7 +35,7 @@ function Signin() {
                     <TextField
                         id="email"
                         label="Email"
-                        variant="standard"
+                        variant="outlined"
                         value={ email }
                         onChange={ e => setEmail(e.target.value) }
                     />
@@ -45,7 +45,7 @@ function Signin() {
                         id="password"
                         type="password"
                         label="Password"
-                        variant="standard"
+                        variant="outlined"
                         value={ password }
                         onChange={ e => setPassword(e.target.value) }
                     />

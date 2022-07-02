@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from "react-router-dom"
-import { Box, TextField, Button } from '@mui/material';
+import { Box, TextField, Button, InputLabel, Select, MenuItem } from '@mui/material';
 
 const URL = 'http://localhost:3001'
 
@@ -12,6 +12,7 @@ function Register() {
     const [branch, setBranch] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [phoneNumber, setPhoneNumber] = useState(0)
     const navigate = useNavigate()
 
     const handleRegister = async () => {
@@ -21,6 +22,7 @@ function Register() {
             username: username,
             address: address,
             branch: branch,
+            phoneNumber: phoneNumber,
             email: email,
             password: password
         }
@@ -47,15 +49,16 @@ function Register() {
                             id="firstName"
                             type="text"
                             label="First Name"
-                            variant="standard"
+                            variant="outlined"
                             value={ firstName }
+                            style={{ marginRight: '10px' }}
                             onChange={ e => setFirstName(e.target.value) }
                         />
                         <TextField
                         id="lastName"
                         type="text"
                         label="Last Name"
-                        variant="standard"
+                        variant="outlined"
                         value={ lastName }
                         onChange={ e => setLastName(e.target.value) }
                         />
@@ -65,9 +68,20 @@ function Register() {
                             id="address"
                             type="text"
                             label="Address"
-                            variant="standard"
+                            variant="outlined"
                             value={ address }
                             onChange={ e => setAddress(e.target.value) }
+                        />
+                    </Box>
+                    <Box mb={ 3 }>
+                        <TextField
+                            id="phoneNumber"
+                            placeholder='000-000-0000'
+                            type="phone"
+                            label="Phone Number"
+                            variant="outlined"
+                            value={ phoneNumber }
+                            onChange={ e => setPhoneNumber(e.target.value) }
                         />
                     </Box>
                     <Box mb={ 3 }>
@@ -75,26 +89,27 @@ function Register() {
                             id="username"
                             type="text"
                             label="Username"
-                            variant="standard"
+                            variant="outlined"
                             value={ username }
                             onChange={ e => setUsername(e.target.value) }
                         />
                     </Box>
                     <Box mb={ 3 }>
-                        <TextField
-                            id="branch"
-                            type="text"
-                            label="Branch"
-                            variant="standard"
-                            value={ branch }
-                            onChange={ e => setBranch(e.target.value) }
-                        />
+                        <InputLabel>Branch</InputLabel>
+                        <Select displayEmpty sx={{ width: '30%' }} value={ branch } label="Branch" onChange={ e => setBranch(e.target.value) }>
+                            <MenuItem value={''}><em>Select One</em></MenuItem>
+                            <MenuItem value={ "Marines" }>Marines</MenuItem>
+                            <MenuItem value={ "Army" }>Army</MenuItem>
+                            <MenuItem value={ "Navy" }>Navy</MenuItem>
+                            <MenuItem value={ "Air-Force" }>Air Force</MenuItem>
+                            <MenuItem value={ "Coast-Guard" }>Coast Guard</MenuItem>
+                        </Select>
                     </Box>
                     <TextField
                         id="email"
                         type="email"
                         label="Email"
-                        variant="standard"
+                        variant="outlined"
                         value={ email }
                         onChange={ e => setEmail(e.target.value) }
                     />
@@ -104,7 +119,7 @@ function Register() {
                         id="password"
                         type="password"
                         label="Password"
-                        variant="standard"
+                        variant="outlined"
                         value={ password }
                         onChange={ e => setPassword(e.target.value) }
                     />

@@ -6,7 +6,7 @@ const Layout = props => {
     const { children } = props
 
     return (
-        <Box minWidth={ 320 }>
+        <Box sx={{ backgroundColor: 'black', height: '0 auto' }} minWidth={ 320 }>
             <Header />
 
             <div>

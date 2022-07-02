@@ -6,6 +6,7 @@ import SigninPage from './pages/SigninPage';
 import RegisterPage from './pages/RegisterPage';
 import ProfilePage from './pages/ProfilePage'
 import HomePage from './pages/HomePage';
+import AccountPage from './pages/AccountPage';
 import CustomThemeProvider from './components/CustomThemeProvider'
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
                         <Route path="register" element={ <RegisterPage /> } />
                         <Route path="profile" element={ <ProfilePage /> } />
                         <Route path='home' element={ <HomePage /> } />
+                        <Route path='account' element={ <AccountPage /> } />
                     </Routes>
                 </CustomThemeProvider>
             </BrowserRouter>
