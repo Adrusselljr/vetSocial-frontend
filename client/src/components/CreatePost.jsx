@@ -4,6 +4,7 @@ import { addUser } from '../redux/userSlice';
 import { useSelector } from 'react-redux';
 import { selectUser, selectToken } from '../redux/userSlice';
 import { Box, Button } from '@mui/material';
+import PostAddIcon from '@mui/icons-material/PostAdd';
 import '../App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -41,7 +42,7 @@ function CreatePost() {
                 <div className="card-body">
                     <img style={{ width: "50px", height: "50px", marginRight: "25px" }} src={ user.profilePicture } alt="profilePicture" />
                     <input value={ post } onChange={ e => setPost(e.target.value) } style={{ width: "80%", marginRight: "25px" }} placeholder={` What's on your mind, ${ user.firstName }?`} type="text" />
-                    <Button onClick={ handleCreatePost } variant="contained">Post</Button>
+                    <Button onClick={ handleCreatePost } variant="contained"><PostAddIcon sx={{ fontSize: 'medium' }} /></Button>
                 </div>
             </div>
         </Box>

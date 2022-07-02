@@ -16,8 +16,8 @@ function DisplayPosts() {
                     <div key={ post._id } style={{ width: "50%", marginBottom: "15px" }} className='card'>
                         <div className="card-body">
                             <img style={{ width: "50px", height: "50px", marginRight: "10px" }} src={ user.profilePicture } alt="profilePicture" />
-                            <h6 style={{ width: "125px" }}>{ post.postOwner.username } : </h6>
-                            <p style={{ width: "70%", marginRight: "25px", marginTop: "5px" }}>{ post.post }</p>
+                            <h6 style={{ width: "15%" }}>{ post.postOwner.username } : </h6>
+                            <p style={{ width: "80%", marginRight: "25px", marginTop: "5px" }}>{ post.post }</p>
                         </div> 
                         <DisplayComments comments={ comments } />
                         <CreateComment comments={ comments } postId={ post._id } />

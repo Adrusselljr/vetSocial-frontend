@@ -22,6 +22,7 @@ function CreateComment(props) {
             setClicked(prevState => !prevState)
         }
     }
+    console.log(comments)
 
     const handleCreateComment = async postId => {
         const newBody = {
