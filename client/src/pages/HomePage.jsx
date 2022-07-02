@@ -4,9 +4,7 @@ import Layout from '../components/Layout'
 function HomePage() {
     return (
         <Layout>
-            <div>
-                <h1>Hello World from HomePage!</h1>
-            </div>
+                <h1 style={{ color: 'white' }}>Hello World from HomePage!</h1>
         </Layout>
     )
 }

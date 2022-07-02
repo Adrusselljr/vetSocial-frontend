@@ -57,11 +57,11 @@ function Header() {
                                     </Button>
                                     <Popper open={ open } anchorEl={ anchorRef.current } role={ undefined } placement="bottom-start" transition disablePortal>
                                         {({ TransitionProps, placement }) => (
-                                            <Grow { ...TransitionProps } style={{ transformOrigin: placement === 'bottom-start' ? 'left top' : 'left bottom' }}>
-                                                <Paper>
+                                            <Grow { ...TransitionProps } style={{ transformOrigin: placement === 'bottom-start' ? 'left top' : 'left bottom', marginRight: '53px' }}>
+                                                <Paper sx={{ backgroundColor: '#3a3b3c' }}>
                                                     <ClickAwayListener onClickAway={ handleClose }>
                                                         <MenuList autoFocusItem={ open } id="composition-menu" aria-labelledby="composition-button" onKeyDown={ handleListKeyDown }>
-                                                            <Link style={{ textDecoration: 'none', color: 'black' }} to='/account'><MenuItem onClick={ handleClose }>My Account</MenuItem></Link>
+                                                            <Link style={{ textDecoration: 'none', color: '#e4e6eb' }} to='/account'><MenuItem onClick={ handleClose }>My Account</MenuItem></Link>
                                                         </MenuList>
                                                     </ClickAwayListener>
                                                 </Paper>

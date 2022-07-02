@@ -4,7 +4,7 @@ import Layout from '../components/Layout'
 function AccountPage() {
     return (
         <Layout>
-            <h1>Hello World from AccountPage!</h1>
+            <h1 style={{ color: 'white' }}>Hello World from AccountPage!</h1>
         </Layout>
     )
 }
