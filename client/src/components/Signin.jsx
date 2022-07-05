@@ -38,6 +38,7 @@ function Signin() {
                         id="email"
                         label="Email"
                         variant="outlined"
+                        sx={{ input: { backgroundColor: '#242526', borderRadius: '10px', color: '#e4e6eb' }, label: { color: '#e4e6eb' } }}
                         value={ email }
                         onChange={ e => setEmail(e.target.value) }
                     />
@@ -48,6 +49,7 @@ function Signin() {
                         type="password"
                         label="Password"
                         variant="outlined"
+                        sx={{ input: { backgroundColor: '#242526', borderRadius: '10px', color: '#e4e6eb' }, label: { color: '#e4e6eb' } }}
                         value={ password }
                         onChange={ e => setPassword(e.target.value) }
                     />

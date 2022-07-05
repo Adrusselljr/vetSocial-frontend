@@ -51,16 +51,18 @@ function Register() {
                             label="First Name"
                             variant="outlined"
                             value={ firstName }
+                            sx={{ input: { backgroundColor: '#242526', borderRadius: '10px', color: '#e4e6eb' }, label: { color: '#e4e6eb' } }}
                             style={{ marginRight: '10px' }}
                             onChange={ e => setFirstName(e.target.value) }
                         />
                         <TextField
-                        id="lastName"
-                        type="text"
-                        label="Last Name"
-                        variant="outlined"
-                        value={ lastName }
-                        onChange={ e => setLastName(e.target.value) }
+                            id="lastName"
+                            type="text"
+                            label="Last Name"
+                            variant="outlined"
+                            sx={{ input: { backgroundColor: '#242526', borderRadius: '10px', color: '#e4e6eb' }, label: { color: '#e4e6eb' } }}
+                            value={ lastName }
+                            onChange={ e => setLastName(e.target.value) }
                         />
                     </Box>
                     <Box mb={ 3 }>
@@ -69,6 +71,7 @@ function Register() {
                             type="text"
                             label="Address"
                             variant="outlined"
+                            sx={{ input: { backgroundColor: '#242526', borderRadius: '10px', color: '#e4e6eb' }, label: { color: '#e4e6eb' } }}
                             value={ address }
                             onChange={ e => setAddress(e.target.value) }
                         />
@@ -80,6 +83,8 @@ function Register() {
                             type="phone"
                             label="Phone Number"
                             variant="outlined"
+                            style={{ placeholder: { color: '#e4e6eb' } }}
+                            sx={{ input: { backgroundColor: '#242526', borderRadius: '10px', color: '#e4e6eb' }, label: { color: '#e4e6eb' }, placeholder: { color: '#e4e6eb' } }}
                             value={ phoneNumber }
                             onChange={ e => setPhoneNumber(e.target.value) }
                         />
@@ -90,13 +95,14 @@ function Register() {
                             type="text"
                             label="Username"
                             variant="outlined"
+                            sx={{ input: { backgroundColor: '#242526', borderRadius: '10px', color: '#e4e6eb' }, label: { color: '#e4e6eb' } }}
                             value={ username }
                             onChange={ e => setUsername(e.target.value) }
                         />
                     </Box>
                     <Box mb={ 3 }>
-                        <InputLabel>Branch</InputLabel>
-                        <Select displayEmpty sx={{ width: '30%' }} value={ branch } label="Branch" onChange={ e => setBranch(e.target.value) }>
+                        <InputLabel sx={{ color: '#e4e6eb' }}>Branch</InputLabel>
+                        <Select displayEmpty sx={{ width: '30%', backgroundColor: '#242526', color: '#e4e6eb', borderRadius: '10px' }} value={ branch } label="Branch" onChange={ e => setBranch(e.target.value) }>
                             <MenuItem value={''}><em>Select One</em></MenuItem>
                             <MenuItem value={ "Marines" }>Marines</MenuItem>
                             <MenuItem value={ "Army" }>Army</MenuItem>
@@ -110,6 +116,7 @@ function Register() {
                         type="email"
                         label="Email"
                         variant="outlined"
+                        sx={{ input: { backgroundColor: '#242526', borderRadius: '10px', color: '#e4e6eb' }, label: { color: '#e4e6eb' } }}
                         value={ email }
                         onChange={ e => setEmail(e.target.value) }
                     />
@@ -120,6 +127,7 @@ function Register() {
                         type="password"
                         label="Password"
                         variant="outlined"
+                        sx={{ input: { backgroundColor: '#242526', borderRadius: '10px', color: '#e4e6eb' }, label: { color: '#e4e6eb' } }}
                         value={ password }
                         onChange={ e => setPassword(e.target.value) }
                     />
