@@ -2,7 +2,7 @@ import React from 'react';
 import { createTheme, ThemeProvider } from "@mui/material";
 
 const DarkSlateGray = '#242526'
-const textColor = '#e4e6eb'
+const TextColor = '#e4e6eb'
 
 const Theme = createTheme({
     palette: {
@@ -10,14 +10,14 @@ const Theme = createTheme({
         main: DarkSlateGray,
         },
         secondary: {
-        main: textColor,
+        main: TextColor,
         },
     },
 
     typography: {
         fontSize: 15,
     },
-
+    
     components: {
         MuiButton: {
             styleOverrides: {

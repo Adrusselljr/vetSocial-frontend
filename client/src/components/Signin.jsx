@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { Box, TextField, Button } from '@mui/material';
 import { addUser, addToken } from '../redux/userSlice';
 import { useDispatch } from 'react-redux';
+import '../index.css'
 const axios = require('axios').default;
 
 const URL = 'http://localhost:3001'
@@ -28,11 +29,12 @@ function Signin() {
     }
 
     return (
-        <Box marginTop="160px" width="50%" display="flex" flexDirection="column">
+        <Box marginTop="160px" width="50%" display="flex" flexDirection="column" paddingBottom='690px'>
             <Box p={ 4 }>
-                <h1>Sign in</h1>
+                <h1 style={{ color: '#e4e6eb' }}>Sign in</h1>
                 <Box mb={ 3 }>
                     <TextField
+                        className='textField'
                         id="email"
                         label="Email"
                         variant="outlined"
@@ -51,7 +53,7 @@ function Signin() {
                     />
                 </Box>
                 <Button onClick={ handleLogin } variant="contained">Sign in</Button><br/><br/>
-                <h6>Don't Have an account?</h6>
+                <h6 style={{ color: '#e4e6eb' }}>Don't Have an account?</h6>
                 <Link style={{ textDecoration: "none" }} to="register"><Button variant="contained">Registe Here</Button></Link>
             </Box>
         </Box>

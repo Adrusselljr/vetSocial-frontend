@@ -40,9 +40,9 @@ function Register() {
     }
 
     return (
-        <Box marginTop="160px" width="50%" display="flex" flexDirection="column">
+        <Box marginTop="160px" width="50%" display="flex" flexDirection="column" paddingBottom='255px'>
             <Box p={ 4 }>
-                <h1>Register</h1>
+                <h1 style={{ color: '#e4e6eb' }}>Register</h1>
                 <Box mb={ 3 }>
                     <Box mb={ 3 }>
                         <TextField
@@ -125,7 +125,7 @@ function Register() {
                     />
                 </Box>
                 <Button onClick={ handleRegister } variant="contained">Submit</Button><br/><br/>
-                <h6>Already have an account?</h6>
+                <h6 style={{ color: '#e4e6eb' }}>Already have an account?</h6>
                 <Link style={{ textDecoration: "none" }} to="/"><Button variant="contained">Login Here</Button></Link>
             </Box>
         </Box>
