@@ -9,7 +9,7 @@ import HomePage from './pages/HomePage';
 import AccountPage from './pages/AccountPage';
 import CustomThemeProvider from './components/CustomThemeProvider'
 
-function App() {
+const App = () => {
     return (
         <ReduxProvider store={ store }>
             <BrowserRouter>

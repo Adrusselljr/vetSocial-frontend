@@ -8,7 +8,7 @@ const axios = require('axios').default;
 
 const URL = 'http://localhost:3001'
 
-function Signin() {
+const Signin = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const dispatch = useDispatch()

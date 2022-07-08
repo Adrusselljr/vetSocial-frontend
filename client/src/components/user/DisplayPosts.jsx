@@ -1,24 +1,29 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
-import { selectUser } from '../redux/userSlice';
+import { selectUser } from '../../redux/userSlice';
 import CreateComment from './CreateComment';
 import DisplayComments from './DisplayComments';
 import { Box } from '@mui/material';
+import DeleteEditPost from './DeleteEditPost';
 
-function DisplayPosts() {
+const DisplayPosts = () => {
     const user = useSelector(selectUser)
     const [clickedPostComments, setClickedPostComment] = useState("")
 
     return (
         <Box width={ 1 } display="flex" flexDirection="column" alignItems="center">
-            {user.postHistory.map(post => {
+            { user.postHistory.map(post => {
                 const comments = post.commentHistory
                 return (
-                    <div key={ post._id } style={{ width: "50%", marginBottom: "25px",  backgroundColor: '#242526' }} className='card'>
-                        <div className="card-body">
+                    <div key={ post._id } style={{ width: "50%", marginBottom: "15px",  backgroundColor: '#242526'}} className='card'>
+                        <div style={{ display: 'flex', alignItems: 'flex-start' }} className="card-body">
                             <img style={{ width: "50px", height: "50px", marginRight: "10px", borderRadius: '25px' }} src={ user.profilePicture } alt="profilePicture" />
-                            <h6 style={{ width: "15%", color: '#e4e6eb' }}>{ post.postOwner.username } : </h6>
-                            <p style={{ width: "80%", marginRight: "25px", marginTop: "5px", color: '#e4e6eb' }}>{ post.post }</p>
+                            <h6 style={{ width: "15%", color: '#e4e6eb', marginTop: '7.5px' }}>{ post.postOwner.username } : </h6>
+                            <p style={{ width: "63%", marginRight: "25px", marginTop: "5px", color: '#e4e6eb' }}>{ post.post }</p>
+                            <DeleteEditPost style={{ position: 'absolute' }} postId={ post._id } />
+                        </div>
+                        <div>
+                            <p style={{ color: '#e4e6eb', fontSize: 'x-small', display: 'flex', justifyContent: 'flex-end', marginRight: '10px' }}>{ comments.length } comments</p>
                         </div>
                         {
                             comments.length > 0
@@ -28,7 +33,7 @@ function DisplayPosts() {
                         <CreateComment comments={ comments } postId={ post._id } setClickedPostComment={ setClickedPostComment } clickedPostComments={ clickedPostComments } />
                     </div>
                 )
-            })}
+            }) }
         </Box>
     )
 }

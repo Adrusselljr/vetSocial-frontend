@@ -3,7 +3,7 @@ import Layout from '../components/Layout'
 import { Box, Typography } from '@mui/material';
 import Register from '../components/Register';
 
-function RegisterPage() {
+const RegisterPage = () => {
     return (
         <Layout>
             <Box display="flex">

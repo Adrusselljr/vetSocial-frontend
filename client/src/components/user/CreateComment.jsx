@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
-import { addUser, setClicked, AsyncClickedPostComments } from '../redux/userSlice';
+import { addUser, setClicked, AsyncClickedPostComments } from '../../redux/userSlice';
 import { useSelector } from 'react-redux';
-import { selectUser, selectToken, selectClicked, selectClickedPostComments } from '../redux/userSlice';
+import { selectUser, selectToken, selectClicked, selectClickedPostComments } from '../../redux/userSlice';
 import { Box, Button } from '@mui/material';
 import AddCommentIcon from '@mui/icons-material/AddComment';
 import CommentIcon from '@mui/icons-material/Comment';
 
 const URL = 'http://localhost:3001'
 
-function CreateComment(props) {
+const CreateComment = props => {
     const { postId, comments } = props
     const [comment, setComment] = useState("")
     const user = useSelector(selectUser)
@@ -48,14 +48,14 @@ function CreateComment(props) {
 
     return (
         <Box width={ 1 } display="flex" flexDirection="column">
-            <div style={{  backgroundColor: '#242526' }} className='card'>
+            <div style={{  backgroundColor: '#242526', position: 'revert' }} className='card'>
                 <div className="card-body">
                     <img style={{ width: "50px", height: "50px", marginRight: "25px", borderRadius: '25px' }} src={ user.profilePicture } alt="profilePicture" />
-                    <input value={ comment } onChange={ e => setComment(e.target.value) } style={{ width: "76%", marginRight: "25px", borderRadius: '10px', backgroundColor: '#3a3b3c' }} placeholder={" Write a comment..."} type="text" />
+                    <input value={ comment } onChange={ e => setComment(e.target.value) } style={{ width: "76%", marginRight: "25px", borderRadius: '10px', backgroundColor: '#3a3b3c', color: '#e4e6eb' }} placeholder={" Write a comment..."} type="text" />
                     <Button onClick={() => handleCreateComment(postId) } sx={{ marginRight: '10px', backgroundColor: 'black'  }} variant="contained"><AddCommentIcon sx={{ fontSize: 'medium' }} /></Button>
                     {
                         comments.length > 0
-                        ? <Button sx={{ backgroundColor: 'black' }} onClick={() => handleClicked(postId) } variant="contained"><CommentIcon sx={{ fontSize: 'medium' }} /></Button>
+                        ? <Button sx={{ backgroundColor: 'black', position: 'revert' }} onClick={() => handleClicked(postId) } variant="contained"><CommentIcon sx={{ fontSize: 'medium' }} /></Button>
                         : ""
                     }
                 </div>

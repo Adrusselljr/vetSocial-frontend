@@ -4,7 +4,7 @@ import { Box, TextField, Button, InputLabel, Select, MenuItem } from '@mui/mater
 
 const URL = 'http://localhost:3001'
 
-function Register() {
+const Register = () => {
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
     const [username, setUsername] = useState("")

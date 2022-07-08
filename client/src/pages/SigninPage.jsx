@@ -4,7 +4,7 @@ import { Box, Typography } from '@mui/material';
 import Signin from '../components/Signin';
 import '../index.css'
 
-function SigninPage() {
+const SigninPage = () => {
     return (
         <Layout>
             <Box display="flex">
