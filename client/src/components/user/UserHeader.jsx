@@ -17,7 +17,7 @@ const UserHeader = () => {
                 <Typography color="secondary" variant="p" component="div">{ user.friends.length} friends</Typography>
             </Box>
             <Box>
-                <Link to='/account' style={{ textDecoration: 'none' }}><Button variant='contained' sx={{ backgroundColor: 'black', marginLeft: '1080px', width: '150px' }}><EditIcon fontSize='small' sx={{ marginRight: '10px' }} />Edit Profile</Button></Link>
+                <Link style={{ textDecoration: 'none' }} to='/edit-user'><Button variant='contained' sx={{ backgroundColor: 'black', marginLeft: '1080px', width: '150px' }}><EditIcon fontSize='small' sx={{ marginRight: '10px' }} />Edit Profile</Button></Link>
             </Box>
         </Box>
     )

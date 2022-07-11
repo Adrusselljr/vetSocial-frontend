@@ -1,50 +1,69 @@
-import React, { useState, useRef } from 'react'
+import React, { useState } from 'react'
+import { styled, alpha } from '@mui/material/styles';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import { Box, Popper, Grow, Paper, ClickAwayListener, MenuItem, MenuList, Button } from '@mui/material';
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import { Box, MenuItem, Button, Menu } from '@mui/material';
+
+const StyledMenu = styled(props => (
+        <Menu elevation={ 0 } anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }} transformOrigin={{ vertical: 'top', horizontal: 'right' }} { ...props }/>
+        ))
+        (({ theme }) => ({
+        '& .MuiPaper-root': {
+        borderRadius: 6,
+        marginTop: theme.spacing(1),
+        minWidth: 180,
+        color:
+            theme.palette.mode === 'light' ? 'rgb(55, 65, 81)' : theme.palette.grey[300],
+        boxShadow:
+            'rgb(255, 255, 255) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px',
+        '& .MuiMenu-list': {
+            padding: '4px 0',
+        },
+        '& .MuiMenuItem-root': {
+            '& .MuiSvgIcon-root': {
+            fontSize: 18,
+            color: theme.palette.text.secondary,
+            marginRight: theme.spacing(1.5),
+            },
+            '&:active': {
+            backgroundColor: alpha(
+                theme.palette.primary.main,
+                theme.palette.action.selectedOpacity,
+            ),
+            },
+        },
+        },
+}));
 
 const DeleteEditPost = props => {
     const { postId } = props
-    const [open, setOpen] = useState(false)
-    const anchorRef = useRef(null)
+    const [anchorEl, setAnchorEl] = useState(null)
+    const open = Boolean(anchorEl)
 
-    const handleToggle = () => {
-        setOpen(prevOpen => !prevOpen)
-    }
-    
-    const handleClose = e => {
-        if(anchorRef.current && anchorRef.current.contains(e.target)) {
-            return
-        }
-        setOpen(false)
+    const handleClick = e => {
+        setAnchorEl(e.currentTarget)
     }
 
-    const handleListKeyDown = e => {
-        if(e.key === 'Tab') {
-            setOpen(false)
-        } else if (e.key === 'Escape') {
-            setOpen(false)
-        }
+    const handleClose = () => {
+        setAnchorEl(null)
     }
 
     return (
         <Box>
-            <Button ref={ anchorRef } id="composition-button" aria-controls={ open ? 'composition-menu' : undefined } aria-expanded={ open ? 'true' : undefined } aria-haspopup="true" onClick={handleToggle}>
-                <MoreHorizIcon color='secondary' />
+            <Button id="demo-customized-button" aria-controls={ open ? 'demo-customized-menu' : undefined } aria-haspopup="true" aria-expanded={ open ? 'true' : undefined } variant="contained" disableElevation onClick={ handleClick }>
+                <MoreHorizIcon />
             </Button>
-            <Popper open={ open } anchorEl={ anchorRef.current } role={ undefined } placement="bottom-start" transition disablePortal>
-                {({ TransitionProps, placement }) => (
-                    <Grow { ...TransitionProps } style={{ transformOrigin: placement === 'bottom-start' ? 'left top' : 'left bottom', marginRight: '53px' }}>
-                        <Paper sx={{ backgroundColor: '#3a3b3c' }}>
-                            <ClickAwayListener onClickAway={ handleClose }>
-                                <MenuList autoFocusItem={ open } id="composition-menu" aria-labelledby="composition-button" onKeyDown={ handleListKeyDown }>
-                                    <MenuItem sx={{ color: '#e4e6eb' }} onClick={ handleClose }>Edit Post</MenuItem>
-                                    <MenuItem sx={{ color: '#e4e6eb' }} onClick={ handleClose }>Delete Post</MenuItem>
-                                </MenuList>
-                            </ClickAwayListener>
-                        </Paper>
-                    </Grow>
-                )}
-            </Popper>
+            <StyledMenu id="demo-customized-menu" MenuListProps={{ 'aria-labelledby': 'demo-customized-button' }} anchorEl={ anchorEl } open={ open } onClose={ handleClose }>
+                <MenuItem onClick={ handleClose } disableRipple>
+                    <EditIcon />
+                    Edit
+                </MenuItem>
+                <MenuItem onClick={ handleClose } disableRipple>
+                    <DeleteForeverIcon />
+                    Delete
+                </MenuItem>
+            </StyledMenu>
         </Box>
     )
 }

@@ -6,8 +6,10 @@ import SigninPage from './pages/SigninPage';
 import RegisterPage from './pages/RegisterPage';
 import ProfilePage from './pages/ProfilePage'
 import HomePage from './pages/HomePage';
-import AccountPage from './pages/AccountPage';
+import EditUser from './components/user/EditUser'
 import CustomThemeProvider from './components/CustomThemeProvider'
+import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const App = () => {
     return (
@@ -19,7 +21,7 @@ const App = () => {
                         <Route path="register" element={ <RegisterPage /> } />
                         <Route path="profile" element={ <ProfilePage /> } />
                         <Route path='home' element={ <HomePage /> } />
-                        <Route path='account' element={ <AccountPage /> } />
+                        <Route path='edit-user' element={ <EditUser /> } />
                     </Routes>
                 </CustomThemeProvider>
             </BrowserRouter>

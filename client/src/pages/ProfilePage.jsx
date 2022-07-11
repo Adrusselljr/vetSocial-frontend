@@ -5,6 +5,7 @@ import UserHeader from '../components/user/UserHeader'
 import Layout from '../components/Layout'
 import { Box, Button } from '@mui/material';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import UserInfo from '../components/user/UserInfo'
 
 const ProfilePage = () => {
     const handleClick = () => {
@@ -15,8 +16,15 @@ const ProfilePage = () => {
         <Layout>
             <Box>
                 <UserHeader />
-                <CreatePost />
-                <DisplayPosts />
+                <Box sx={{ display: 'flex' }}>
+                    <Box>
+                        <UserInfo />
+                    </Box>
+                    <Box>
+                        <CreatePost />
+                        <DisplayPosts />
+                    </Box>
+                </Box>
                 <Box sx={{ display: 'flex', justifyContent: 'flex-end', margin: "20px", position: 'fixed', right: '50px', bottom: '20px'  }}>
                     <Button color='primary' variant="contained" onClick={ handleClick }><ArrowUpwardIcon /></Button>
                 </Box>

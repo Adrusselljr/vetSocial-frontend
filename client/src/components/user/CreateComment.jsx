@@ -48,7 +48,7 @@ const CreateComment = props => {
 
     return (
         <Box width={ 1 } display="flex" flexDirection="column">
-            <div style={{  backgroundColor: '#242526', position: 'revert' }} className='card'>
+            <div style={{  backgroundColor: '#242526', position: 'revert', borderRadius: '10px' }} className='card'>
                 <div className="card-body">
                     <img style={{ width: "50px", height: "50px", marginRight: "25px", borderRadius: '25px' }} src={ user.profilePicture } alt="profilePicture" />
                     <input value={ comment } onChange={ e => setComment(e.target.value) } style={{ width: "76%", marginRight: "25px", borderRadius: '10px', backgroundColor: '#3a3b3c', color: '#e4e6eb' }} placeholder={" Write a comment..."} type="text" />

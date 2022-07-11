@@ -15,11 +15,11 @@ const DisplayPosts = () => {
             { user.postHistory.map(post => {
                 const comments = post.commentHistory
                 return (
-                    <div key={ post._id } style={{ width: "50%", marginBottom: "15px",  backgroundColor: '#242526'}} className='card'>
+                    <div key={ post._id } style={{ width: "50%", marginBottom: "15px",  backgroundColor: '#242526', borderRadius: '10px' }} className='card'>
                         <div style={{ display: 'flex', alignItems: 'flex-start' }} className="card-body">
                             <img style={{ width: "50px", height: "50px", marginRight: "10px", borderRadius: '25px' }} src={ user.profilePicture } alt="profilePicture" />
                             <h6 style={{ width: "15%", color: '#e4e6eb', marginTop: '7.5px' }}>{ post.postOwner.username } : </h6>
-                            <p style={{ width: "63%", marginRight: "25px", marginTop: "5px", color: '#e4e6eb' }}>{ post.post }</p>
+                            <p style={{ width: "61%", marginRight: "15px", marginTop: "5px", color: '#e4e6eb' }}>{ post.post }</p>
                             <DeleteEditPost style={{ position: 'absolute' }} postId={ post._id } />
                         </div>
                         <div>

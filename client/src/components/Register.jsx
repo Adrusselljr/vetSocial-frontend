@@ -40,7 +40,7 @@ const Register = () => {
     }
 
     return (
-        <Box marginTop="160px" width="50%" display="flex" flexDirection="column" paddingBottom='255px'>
+        <Box marginTop="160px" width="50%" display="flex" flexDirection="column" paddingBottom='278px'>
             <Box p={ 4 }>
                 <h1 style={{ color: '#e4e6eb' }}>Register</h1>
                 <Box mb={ 3 }>

@@ -29,7 +29,7 @@ const Signin = () => {
     }
 
     return (
-        <Box marginTop="160px" width="50%" display="flex" flexDirection="column" paddingBottom='690px'>
+        <Box marginTop="160px" width="50%" display="flex" flexDirection="column" paddingBottom='710px'>
             <Box p={ 4 }>
                 <h1 style={{ color: '#e4e6eb' }}>Sign in</h1>
                 <Box mb={ 3 }>
