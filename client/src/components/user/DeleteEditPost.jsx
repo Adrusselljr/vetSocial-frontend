@@ -1,40 +1,9 @@
 import React, { useState } from 'react'
-import { styled, alpha } from '@mui/material/styles';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
-import { Box, MenuItem, Button, Menu } from '@mui/material';
+import { Box, MenuItem, Button, Menu, Typography } from '@mui/material';
 
-const StyledMenu = styled(props => (
-        <Menu elevation={ 0 } anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }} transformOrigin={{ vertical: 'top', horizontal: 'right' }} { ...props }/>
-        ))
-        (({ theme }) => ({
-        '& .MuiPaper-root': {
-        borderRadius: 6,
-        marginTop: theme.spacing(1),
-        minWidth: 180,
-        color:
-            theme.palette.mode === 'light' ? 'rgb(55, 65, 81)' : theme.palette.grey[300],
-        boxShadow:
-            'rgb(255, 255, 255) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px',
-        '& .MuiMenu-list': {
-            padding: '4px 0',
-        },
-        '& .MuiMenuItem-root': {
-            '& .MuiSvgIcon-root': {
-            fontSize: 18,
-            color: theme.palette.text.secondary,
-            marginRight: theme.spacing(1.5),
-            },
-            '&:active': {
-            backgroundColor: alpha(
-                theme.palette.primary.main,
-                theme.palette.action.selectedOpacity,
-            ),
-            },
-        },
-        },
-}));
 
 const DeleteEditPost = props => {
     const { postId } = props
@@ -54,16 +23,16 @@ const DeleteEditPost = props => {
             <Button id="demo-customized-button" aria-controls={ open ? 'demo-customized-menu' : undefined } aria-haspopup="true" aria-expanded={ open ? 'true' : undefined } variant="contained" disableElevation onClick={ handleClick }>
                 <MoreHorizIcon />
             </Button>
-            <StyledMenu id="demo-customized-menu" MenuListProps={{ 'aria-labelledby': 'demo-customized-button' }} anchorEl={ anchorEl } open={ open } onClose={ handleClose }>
+            <Menu id="demo-customized-menu" MenuListProps={{ 'aria-labelledby': 'demo-customized-button' }} anchorEl={ anchorEl } open={ open } onClose={ handleClose }>
                 <MenuItem onClick={ handleClose } disableRipple>
-                    <EditIcon />
-                    Edit
+                    <EditIcon fontSize='small' sx={{ marginRight: '10px' }} />
+                    <Typography>Edit</Typography>
                 </MenuItem>
                 <MenuItem onClick={ handleClose } disableRipple>
-                    <DeleteForeverIcon />
-                    Delete
+                    <DeleteForeverIcon fontSize='small' sx={{ marginRight: '10px' }} />
+                    <Typography>Delete</Typography>
                 </MenuItem>
-            </StyledMenu>
+            </Menu>
         </Box>
     )
 }

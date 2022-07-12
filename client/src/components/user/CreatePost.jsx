@@ -37,8 +37,8 @@ const CreatePost = () => {
     }
 
     return (
-        <Box width={ 1 } display="flex" flexDirection="column" alignItems="center" sx={{ marginBottom: '15px' }}>
-            <div style={{ width: "50%", backgroundColor: '#242526', borderRadius: '10px' }} className='card'>
+        <Box width='700px' display="flex" flexDirection="column" alignItems="center" sx={{ marginBottom: '15px', marginLeft: '15px' }}>
+            <div style={{ width: '100%', backgroundColor: '#242526', borderRadius: '10px' }} className='card'>
                 <div className="card-body">
                     <img style={{ width: "50px", height: "50px", marginRight: "25px", borderRadius: '25px' }} src={ user.profilePicture } alt="profilePicture" />
                     <input value={ post } onChange={ e => setPost(e.target.value) } style={{ width: "80%", marginRight: "25px", borderRadius: '10px', backgroundColor: '#3a3b3c', color: '#e4e6eb' }} placeholder={` What's on your mind, ${ user.firstName }?`} type="text" />

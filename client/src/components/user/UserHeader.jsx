@@ -10,7 +10,7 @@ const UserHeader = () => {
 
     return (
         <Box width={ 1 } display="flex" flexDirection="column" alignItems="center" sx={{ backgroundColor: '#242526', height: '580px', marginBottom: '15px' }} >
-            <img style={{ width: '85%', borderRadius: '10px', position: 'relative' }} src={ user.coverPhoto } alt="coverPhoto" />
+            <img style={{ width: '78%', borderRadius: '10px', position: 'relative' }} src={ user.coverPhoto } alt="coverPhoto" />
             <img style={{ width: '175px', borderRadius: '150px', border: 'solid black 2px', position: 'absolute', top: '435px', left: '175px' }} src={ user.profilePicture } alt="profilePicture" />
             <Box sx={{ marginRight: '475px' }}>
                 <Typography sx={{ marginTop: '25px' }} color="secondary" variant="h4" component="div">{ user.firstName } { user.lastName }</Typography>

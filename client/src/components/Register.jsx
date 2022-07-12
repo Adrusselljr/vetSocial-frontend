@@ -102,7 +102,7 @@ const Register = () => {
                     </Box>
                     <Box mb={ 3 }>
                         <InputLabel sx={{ color: '#e4e6eb' }}>Branch</InputLabel>
-                        <Select displayEmpty sx={{ width: '30%', backgroundColor: '#242526', color: '#e4e6eb', borderRadius: '10px' }} value={ branch } label="Branch" onChange={ e => setBranch(e.target.value) }>
+                        <Select displayEmpty sx={{ width: '40%', backgroundColor: '#242526', color: '#e4e6eb', borderRadius: '10px' }} value={ branch } label="Branch" onChange={ e => setBranch(e.target.value) }>
                             <MenuItem value={''}><em>Select One</em></MenuItem>
                             <MenuItem value={ "Marines" }>Marines</MenuItem>
                             <MenuItem value={ "Army" }>Army</MenuItem>
@@ -111,30 +111,32 @@ const Register = () => {
                             <MenuItem value={ "Coast-Guard" }>Coast Guard</MenuItem>
                         </Select>
                     </Box>
-                    <TextField
-                        id="email"
-                        type="email"
-                        label="Email"
-                        variant="outlined"
-                        sx={{ input: { backgroundColor: '#242526', borderRadius: '10px', color: '#e4e6eb' }, label: { color: '#e4e6eb' } }}
-                        value={ email }
-                        onChange={ e => setEmail(e.target.value) }
-                    />
+                    <Box mb={ 3 }>
+                        <TextField
+                            id="email"
+                            type="email"
+                            label="Email"
+                            variant="outlined"
+                            sx={{ input: { backgroundColor: '#242526', borderRadius: '10px', color: '#e4e6eb' }, label: { color: '#e4e6eb' } }}
+                            value={ email }
+                            onChange={ e => setEmail(e.target.value) }
+                        />
+                    </Box>
+                    <Box mb={ 3 }>
+                        <TextField
+                            id="password"
+                            type="password"
+                            label="Password"
+                            variant="outlined"
+                            sx={{ input: { backgroundColor: '#242526', borderRadius: '10px', color: '#e4e6eb' }, label: { color: '#e4e6eb' } }}
+                            value={ password }
+                            onChange={ e => setPassword(e.target.value) }
+                        />
+                    </Box>
+                    <Button onClick={ handleRegister } variant="contained">Submit</Button><br/><br/>
+                    <h6 style={{ color: '#e4e6eb' }}>Already have an account?</h6>
+                    <Link style={{ textDecoration: "none" }} to="/"><Button variant="contained">Login Here</Button></Link>
                 </Box>
-                <Box mb={ 3 }>
-                    <TextField
-                        id="password"
-                        type="password"
-                        label="Password"
-                        variant="outlined"
-                        sx={{ input: { backgroundColor: '#242526', borderRadius: '10px', color: '#e4e6eb' }, label: { color: '#e4e6eb' } }}
-                        value={ password }
-                        onChange={ e => setPassword(e.target.value) }
-                    />
-                </Box>
-                <Button onClick={ handleRegister } variant="contained">Submit</Button><br/><br/>
-                <h6 style={{ color: '#e4e6eb' }}>Already have an account?</h6>
-                <Link style={{ textDecoration: "none" }} to="/"><Button variant="contained">Login Here</Button></Link>
             </Box>
         </Box>
     )

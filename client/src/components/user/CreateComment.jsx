@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { addUser, setClicked, AsyncClickedPostComments } from '../../redux/userSlice';
 import { useSelector } from 'react-redux';
-import { selectUser, selectToken, selectClicked, selectClickedPostComments } from '../../redux/userSlice';
+import { selectUser, selectToken } from '../../redux/userSlice';
 import { Box, Button } from '@mui/material';
 import AddCommentIcon from '@mui/icons-material/AddComment';
 import CommentIcon from '@mui/icons-material/Comment';
@@ -13,17 +13,12 @@ const CreateComment = props => {
     const { postId, comments } = props
     const [comment, setComment] = useState("")
     const user = useSelector(selectUser)
-    const clicked = useSelector(selectClicked)
-    const clickedPostComments = useSelector(selectClickedPostComments)
     const token = useSelector(selectToken)
     const dispatch = useDispatch()
 
     const handleClicked = postId => {
         dispatch(AsyncClickedPostComments(postId))
-        console.log("postId:", postId)
-        console.log("clickedPostComments:", clickedPostComments)
         dispatch(setClicked())
-        console.log("clicked:", clicked)
     }
 
     const handleCreateComment = async postId => {
