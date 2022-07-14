@@ -10,6 +10,7 @@ const DisplayPosts = () => {
     const user = useSelector(selectUser)
     const [clickedPostComments, setClickedPostComment] = useState("")
 
+
     return (
         <Box display="flex" flexDirection="column" alignItems="center" sx={{ marginLeft: '15px' }}>
             { user.postHistory.map(post => {
