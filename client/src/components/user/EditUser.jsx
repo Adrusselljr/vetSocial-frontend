@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux';
-import { selectToken, selectUser, addUser } from '../../redux/userSlice';
+import { selectToken, selectUser } from '../../redux/userSlice';
 import { useNavigate } from 'react-router-dom'
-import { useDispatch } from 'react-redux';
 import Layout from '../Layout'
 import UserHeader from './UserHeader'
 import { Box, TextField, InputLabel, Select, MenuItem, Button } from '@mui/material'
@@ -12,7 +11,6 @@ const URL = 'http://localhost:3001'
 const EditUser = () => {
     const user = useSelector(selectUser)
     const token = useSelector(selectToken)
-    const dispatch = useDispatch()
     const navigate = useNavigate()
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
@@ -112,9 +110,7 @@ const EditUser = () => {
             body: JSON.stringify(newBody)
         })
         const parsedData = await fetchedData.json()
-        console.log('user ', parsedData.payload)
-        dispatch(addUser(parsedData.payload))
-        // navigate("/profile")
+        navigate("/profile")
         return parsedData
     }
 

@@ -25,9 +25,9 @@ const Header = () => {
                             user
                             ? (
                             <>
-                                <Box sx={{ width: 600, display: 'flex', justifyContent: 'space-around', marginRight: '310px' }}>
+                                <Box sx={{ width: "45%", display: 'flex', justifyContent: 'space-around', marginRight: '310px' }}>
                                     <Box><Link to='/home'><HomeIcon fontSize='large' color='secondary' /></Link></Box>
-                                    <Box><Link to='/profile'><img style={{ width: '36px', heigth: '36px', borderRadius: '25px' }} src={ user.profilePicture } alt="profilePicture" /></Link></Box>
+                                    <Box><Link to='/profile'><img style={{ width: '34px', heigth: '34px', borderRadius: '25px' }} src={ user.profilePicture } alt="profilePicture" /></Link></Box>
                                 </Box>
                                 <Box><Button sx={{ backgroundColor: 'black' }} onClick={ handleSignout } variant="contained" color="primary">Sign Out</Button></Box>
                             </>
