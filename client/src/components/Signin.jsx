@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import '../index.css'
 const axios = require('axios').default;
 
-const URL = 'http://localhost:3001'
+const URL = process.env.REACT_APP_AXIOS
 
 const Signin = () => {
     const [email, setEmail] = useState("")

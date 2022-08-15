@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from "react-router-dom"
 import { Box, TextField, Button, InputLabel, Select, MenuItem } from '@mui/material';
 
-const URL = 'http://localhost:3001'
+const URL = process.env.REACT_APP_AXIOS
 
 const Register = () => {
     const [firstName, setFirstName] = useState("")

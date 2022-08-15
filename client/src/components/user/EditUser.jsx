@@ -6,7 +6,7 @@ import Layout from '../Layout'
 import UserHeader from './UserHeader'
 import { Box, TextField, InputLabel, Select, MenuItem, Button } from '@mui/material'
 
-const URL = 'http://localhost:3001'
+const URL = process.env.REACT_APP_AXIOS
 
 const EditUser = () => {
     const user = useSelector(selectUser)

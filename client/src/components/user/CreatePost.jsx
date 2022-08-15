@@ -8,7 +8,7 @@ import PostAddIcon from '@mui/icons-material/PostAdd';
 import '../../App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-const URL = 'http://localhost:3001'
+const URL = process.env.REACT_APP_AXIOS
 
 const CreatePost = () => {
     const [post, setPost] = useState("")

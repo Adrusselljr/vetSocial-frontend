@@ -7,7 +7,7 @@ import { Box, Button } from '@mui/material';
 import AddCommentIcon from '@mui/icons-material/AddComment';
 import CommentIcon from '@mui/icons-material/Comment';
 
-const URL = 'http://localhost:3001'
+const URL = process.env.REACT_APP_AXIOS
 
 const CreateComment = props => {
     const { postId, comments } = props
