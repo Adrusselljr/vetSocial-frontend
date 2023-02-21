@@ -6,7 +6,7 @@ import { Box, MenuItem, Button, Menu, Typography } from '@mui/material';
 
 
 const DeleteEditPost = props => {
-    const { postId } = props
+    // const { postId } = props
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl)
 
